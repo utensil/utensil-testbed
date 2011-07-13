@@ -1,0 +1,9 @@
+development:
+  domain: localhost:3000
+  omni_auth_providers: [:tqq, :douban, :tsina, :github, :renren]
+
+test:
+  domain: test.host
+
+production:
+  domain: example.com

@@ -9,7 +9,14 @@ gem 'pg'
 
 group :development do
   gem 'sqlite3'
+  gem "nifty-generators"
 end
+
+gem 'devise'  
+gem 'omniauth'  
+
+gem 'carrierwave'
+gem 'ya2yaml'
 
 # Use unicorn as the web server
 # gem 'unicorn'
