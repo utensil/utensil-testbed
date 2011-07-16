@@ -6,6 +6,7 @@ gem 'rails', '3.0.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'rake', '0.8.7', :group => :production
+gem 'evernote', :group => :production
 
 gem 'pg'
 
@@ -45,3 +46,6 @@ gem 'ya2yaml'
 #   gem 'webrat'
 # end
 gem "mocha", :group => :test
+gem "rspec", :group => :test
+
+
