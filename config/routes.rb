@@ -2,6 +2,8 @@ UtensilTestbed::Application.routes.draw do
   
   match '/auth/:provider/callback' => 'authentications#create'
   
+  match '/auth/failure' => 'home#sorry'
+  
   resources :authentications
 
   get "home/index"
