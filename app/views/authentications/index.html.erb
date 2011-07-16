@@ -1,41 +1,41 @@
-<% title "Sign In" %> 
+<% title t("authentications.sign_in") %> 
 
 <div id="user_nav">  
   <% if user_signed_in? %>  
-    Signed in as <%= current_user.email %>. Not you?  
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>  
+    <%= t "authentications.sign_in_prompt", :login_name => current_user.email%>
+    <%= link_to t("authentications.sign_out"), destroy_user_session_path, :method => :delete %>  
   <% else %>  
-    <%= link_to "Sign up", new_user_registration_path %> or  
-    <%= link_to "Sign in", new_user_session_path %>  
+    <%= link_to t("authentications.sign_up"), new_user_registration_path %>
+    <%= t("or") %>
+    <%= link_to t("authentications.sign_in"), new_user_session_path %>  
   <% end %>  
 </div>  
 
 <% if @authentications %>  
  <% unless @authentications.empty? %>  
-  <p><strong>You can sign in to this account using:</strong></p>  
+  <p><strong><%= t("authentications.sign_in_methods_for_current_user")%></strong></p>  
    <div class="authentications">  
     <% for authentication in @authentications %>  
      <div class="authentication">  
       <%= image_tag "/images/#{authentication.provider}_32.png", 
       :size => "32x32"%>  
-      <div class="provider"><%= t authentication.provider    
+      <div class="provider"><%= t authentication.provider, :scope => :auth_provider  
       %></div>  
       <div class="uid"><%= authentication.uid %></div>  
-       <%= link_to "X", authentication, :confirm =>
-      'Are you sure you want to remove this authentication  
-      option?', :method => :delete, :class => "remove" %>  
+       <%= link_to "X", authentication, :confirm => t("authentications.remove_auth_prompt"),
+        :method => :delete, :class => "remove" %>  
      </div>  
      <% end %>  
      <div class="clear"></div>  
     </div>  
    <% end %>  
-   <p><strong>Add another service to sign in with:</strong></p>  
+   <p><strong><%= t("authentications.add_sign_in_method") %></strong></p>  
   <% else %>  
-  <p><strong>Sign in through one of these services:</strong></p>  
+  <p><strong><%= t("authentications.sign_in_methods_for_not_login")%></strong></p>  
 <% end %>
   
 <% for auth_method in $omni_auth_providers -%>
-  <%= link_to image_tag("/images/#{auth_method.to_s}_32.png", :size => "32x32", :title => (t auth_method.to_s)), "/auth/#{auth_method.to_s}", 
+  <%= link_to image_tag("/images/#{auth_method.to_s}_32.png", :size => "32x32", :title => (t auth_method.to_s, :scope => :auth_provider)), "/auth/#{auth_method.to_s}", 
         :class => "auth_provider"%>  
 <% end -%>
 <div class="clear"></div> 

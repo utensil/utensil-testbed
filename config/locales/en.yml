@@ -2,9 +2,28 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
-  tqq: "腾讯微博"
-  douban: "豆瓣"
-  tsina: "新浪微博"
-  github: "GitHub"
-  renren: "人人网"
+  or: "or"
+  auth_provider:
+    tqq: "Tencent Microblog"
+    douban: "Douban"
+    tsina: "Sina Microblog"
+    github: "GitHub"
+    renren: "RenRen SNS"
+    evernote: "Evernote"
+  authentications:
+    sign_in:
+      "Sign In"
+    sign_in_prompt: 
+      "Signed in as {{login_name}}. Not you? "
+    sign_out:
+      "Sign Out"
+    sign_up:
+      "Sign Up"
+    sign_in_methods_for_current_user:
+      "You can sign in to this account using:"
+    remove_auth_prompt:
+      'Are you sure you want to remove this authentication option?'
+    add_sign_in_method:
+      'Add another service to sign in with:'
+    sign_in_methods_for_not_login:
+      'Sign in through one of these services:'

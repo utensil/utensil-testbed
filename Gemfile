@@ -5,7 +5,7 @@ gem 'rails', '3.0.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'rake', '0.8.7' 
+gem 'rake', '0.8.7', :group => :production
 
 gem 'pg'
 
@@ -13,6 +13,8 @@ group :development do
   gem 'sqlite3'
   gem "nifty-generators"
 end
+
+gem 'formtastic'
 
 gem 'devise'  
 gem 'omniauth'  
