@@ -15,7 +15,7 @@ else
   SECRET_CONFIG = SECRET_YAML[RAILS_ENV]
 end
 
-$omni_auth_providers = APP_CONFIG[:omni_auth_providers]
+$omni_auth_providers = APP_CONFIG[:omni_auth_providers] || {}
 
 #raise SECRET_CONFIG.inspect
 

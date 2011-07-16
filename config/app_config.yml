@@ -4,6 +4,8 @@ development:
 
 test:
   domain: test.host
+  omni_auth_providers: [:tqq, :douban, :tsina, :github, :renren]
 
 production:
   domain: example.com
+  omni_auth_providers: [:tqq, :douban, :tsina, :github, :renren]
