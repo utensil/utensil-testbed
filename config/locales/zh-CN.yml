@@ -237,7 +237,6 @@ zh-CN:
         even: "必须为双数"
         taken: "已经被使用"
         record_invalid: "校验失败: %{errors}"
-
   activemodel:
     errors:
       template:
@@ -268,6 +267,9 @@ zh-CN:
       less_than_or_equal_to: "必须小于或等于 %{count}"
       odd: "必须为单数"
       even: "必须为双数"
+      not_saved: 
+        one: "有 1 个错误发生导致「%{resource}」无法被保存。"
+        other: "有 %{count} 个错误发生导致「%{resource}」无法被保存。"
 
   helpers:
     select:
