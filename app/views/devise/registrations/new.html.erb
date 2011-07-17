@@ -1,4 +1,8 @@
-<h2>Sign up</h2>
+<h2><%= t("authentications.sign_up") %></h2>
+
+<% if session[:omniauth] -%>
+  <%= t("authentications.fullfill_to_sign_up", :kind => t("auth_provider.#{session[:omniauth]['provider']}")) %>
+<% end =%>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -12,7 +16,7 @@
   <p><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></p>
 
-  <p><%= f.submit "Sign up" %></p>
+  <p><%= f.submit t("authentications.sign_up") %></p>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>

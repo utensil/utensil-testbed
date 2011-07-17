@@ -22,6 +22,8 @@ zh-CN:
       "退出"
     sign_up:
       "注册"
+    fullfill_to_sign_up:
+      "您已经成功从%{kind}帐户授权，您还需要补填如下信息就可以完成注册。"
     sign_in_methods_for_current_user:
       "您已启用了下列登录方式："
     remove_auth_prompt:
@@ -29,7 +31,15 @@ zh-CN:
     add_sign_in_method:
       '您还可以启用更多的登录方式：'
     sign_in_methods_for_not_login:
-      '您还可以直接通过您在下列网站的帐号登录：' 
+      '您还可以直接通过您在下列网站的帐户登录：' 
+    forget_password:
+      '忘记密码?'
+    confirmation_not_received:
+      "没收到帐户确认邮件?"
+    unlock_not_received:  
+      "没收到帐户解锁指引邮件？"
+    button_reset_password:
+      "发送重置密码邮件"
   date:
     formats:
       default: "%Y-%m-%d"

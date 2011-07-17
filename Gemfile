@@ -15,7 +15,8 @@ group :development do
   gem "nifty-generators"
 end
 
-gem 'formtastic'
+#gem 'formtastic'
+gem "simple_form"
 
 gem 'devise'  
 gem 'omniauth'  

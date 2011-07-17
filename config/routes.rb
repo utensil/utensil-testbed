@@ -10,7 +10,7 @@ UtensilTestbed::Application.routes.draw do
 
   root :to => "authentications#index"
   
-  devise_for :users , :controllers => { :registrations => 'users/registrations' } 
+  devise_for :users #, :controllers => { :registrations => 'users/registrations' } 
   
  # root :to => "session#new"
 

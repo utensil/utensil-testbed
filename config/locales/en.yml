@@ -19,6 +19,8 @@ en:
       "Sign Out"
     sign_up:
       "Sign Up"
+    fullfill_to_sign_up:
+      "You have successfully authorized from %{kind} account. Please fill up the following information to continue."
     sign_in_methods_for_current_user:
       "You can sign in to this account using:"
     remove_auth_prompt:
@@ -27,3 +29,11 @@ en:
       'Add another service to sign in with:'
     sign_in_methods_for_not_login:
       'Sign in through one of these services:'
+    forget_password:
+      'Forgot your password?'
+    confirmation_not_received:
+      "Didn't receive confirmation instructions?"
+    unlock_not_received:  
+      "Didn't receive unlock instructions?"
+    button_reset_password:
+      "Send me reset password instructions"
