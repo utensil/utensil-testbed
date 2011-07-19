@@ -48,5 +48,11 @@ gem 'ya2yaml'
 # end
 gem "mocha", :group => :test
 gem "rspec", :group => :test
+gem "rspec-rails", :group => [:test, :development]
+group :test do
+  gem "factory_girl_rails"
+  #gem "capybara"
+  gem "guard-rspec"
+end
 
 

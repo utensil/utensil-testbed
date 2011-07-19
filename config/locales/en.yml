@@ -10,6 +10,11 @@ en:
     github: "GitHub"
     renren: "RenRen SNS"
     evernote: "Evernote"
+    yahoo: "Yahoo!"
+    baidu: "Baidu"
+    t163: "Netease"
+    tsohu: "Sohu"
+    linked_in: "Linked In"
   authentications:
     sign_in:
       "Sign In"

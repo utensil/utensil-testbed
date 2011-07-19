@@ -13,6 +13,11 @@ zh-CN:
     github: "GitHub"
     renren: "人人网"
     evernote: "Evernote"
+    yahoo: "雅虎"
+    baidu: "百度"
+    t163: "网易微博"
+    tsohu: "搜狐微博"
+    linked_in: "Linked In"
   authentications:
     sign_in:
       "登录"

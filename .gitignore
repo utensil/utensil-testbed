@@ -4,3 +4,4 @@ log/*.log
 tmp/
 
 /config/secret_config.yml
+/config/locales/zh-TW.yml

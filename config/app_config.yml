@@ -1,11 +1,8 @@
 development:
-  domain: localhost:3000
-  omni_auth_providers: [:tqq, :douban, :tsina, :github, :renren] #, :evernote]
+  omni_auth_providers: [:tqq, :douban, :tsina, :github, :renren, :yahoo, :t163, :tsohu, :linked_in] #, :evernote]
 
 test:
-  domain: test.host
-  omni_auth_providers: [:tqq, :douban, :tsina, :github, :renren] #, :evernote]
+  omni_auth_providers: [:tqq, :douban, :tsina, :github, :renren, :yahoo, :t163, :tsohu, :linked_in] #, :evernote]
 
 production:
-  domain: example.com
-  omni_auth_providers: [:tqq, :douban, :tsina, :github, :renren] #, :evernote]
+  omni_auth_providers: [:tqq, :douban, :tsina, :github, :renren, :yahoo, :t163, :tsohu, :linked_in] #, :evernote]
