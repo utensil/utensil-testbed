@@ -1,25 +1,27 @@
 <section id="home" class="span-32 last"> 
       <div class="wrapper"> 
         <header> 
-          <h1>心水志</h1> 
+<!--           <h1><%= link_to image_tag("/images/logo_512.png", 
+       :size => '128x128', :alt => '心水志'), '/' %></h1> -->
+          <h1>心水志</h1>
           <h2>浪迹网络，记录心迹</h2> 
         </header> 
  
         <nav> 
           <ul> 
             <li><a id="href-forget_servers" href="#forget_servers">自己的活动</a></li> 
-            <li class="active"><a id="href-run_anything" href="#run_anything">他人的反馈<sup>尽请期待</sup></a></li> 
-            <li><a id="href-see_everything" href="#see_everything">随心的整合<sup>尽请期待</sup></a></li> 
-            <li><a id="href-trust_and_manage" href="#trust_and_manage">中意的剪裁<sup>尽请期待</sup></a></li> 
+            <li class="active"><a id="href-run_anything" href="#run_anything">他人的反馈<sup>新</sup></a></li> 
+            <li><a id="href-see_everything" href="#see_everything">随心的整合<sup>新</sup></a></li> 
+            <li><a id="href-trust_and_manage" href="#trust_and_manage">中意的剪裁<sup>新</sup></a></li> 
           </ul> 
         </nav> 
  
         <div id="slider-container"> 
-          <div id="slider-handle" style="left: 286px"></div> 
+          <div id="slider-handle" style="left: 100px"></div> 
           <div id="slider-code"></div> 
           <article id="forget_servers" style="display:none;"> 
             <h3> 
-              在一处集中查看您在所有网络的各色活动。
+              在一处集中查看您在所有网络的各色活动
             </h3> 
             <p> 
               你发布原创微博了？在豆瓣收藏新书了？在人人发表了新日志？在Evernote添加了新笔记？ 
@@ -76,7 +78,7 @@
               剪裁您最喜欢的微博秀和杂志
             </h3> 
             <p>
-              签名秀太简单？微博秀很多杂乱信息？想要把自己整合的结果导出或者发布？。            
+              签名秀太简单？微博秀很多杂乱信息？想要把自己整合的结果导出或者发布？           
             </p> 
             <p>
               定制您自己的微博秀、您自己的杂志。 可以做成图片，可以另存为网页mht，可以打印为pdf，还可以导出为各种结构式的格式，xml、json、yaml。
@@ -91,10 +93,7 @@
         </div> 
       </div> 
     </section> 
-    
-<script src="http://www.heroku.com/javascripts/modernizr-2.0.min.js"></script>
-<script src='http://www.heroku.com/javascripts/jquery-1.6.1.min.js' type='text/javascript'></script>
-<script src='http://www.heroku.com/javascripts/home.js' type='text/javascript'></script> 
+<script src='/javascripts/home.js' type='text/javascript'></script> 
 <!--[if lt IE 9]>
 <script src="http://www.heroku.com/javascripts/selectivizr-1.0.2.min.js"></script>
 <![endif]--> 

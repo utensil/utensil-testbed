@@ -4,7 +4,7 @@
   <%= t("authentications.fullfill_to_sign_up", :kind => t("auth_provider.#{session[:omniauth]['provider']}")) %>
 <% end =%>
 
-<div class='span-14 prepend-12 append-12 last'>
+<div class='span-14 prepend-11 append-11 last'>
   <h2><%= t("authentications.sign_up") %></h2>
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>

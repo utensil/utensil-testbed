@@ -24,6 +24,7 @@ gem 'omniauth'
 gem 'carrierwave'
 gem 'ya2yaml'
 
+gem 'jquery-rails'
 # Use unicorn as the web server
 # gem 'unicorn'
 

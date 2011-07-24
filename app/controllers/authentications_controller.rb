@@ -32,7 +32,7 @@ class AuthenticationsController < ApplicationController
       # flash[:notice] = "Signed in successfully."  
       # sign_in_and_redirect(:user, user)  
     end  
-  end 
+  end
 
   def destroy  
     @authentication = current_user.authentications.find(params[:id]) 
