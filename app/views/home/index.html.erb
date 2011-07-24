@@ -1,14 +1,101 @@
-<div id="user_nav">  
-  <% if user_signed_in? %>  
-    Signed in as <%= current_user.email %>. Not you?  
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>  
-  <% else %>  
-    <%= link_to "Sign up", new_user_registration_path %> or  
-    <%= link_to "Sign in", new_user_session_path %>  
-  <% end %>  
-</div> 
-
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-
-<p>During testing, you will always see this page.</p>
+<section id="home" class="span-32 last"> 
+      <div class="wrapper"> 
+        <header> 
+          <h1>心水志</h1> 
+          <h2>浪迹网络，记录心迹</h2> 
+        </header> 
+ 
+        <nav> 
+          <ul> 
+            <li><a id="href-forget_servers" href="#forget_servers">自己的活动</a></li> 
+            <li class="active"><a id="href-run_anything" href="#run_anything">他人的反馈<sup>尽请期待</sup></a></li> 
+            <li><a id="href-see_everything" href="#see_everything">随心的整合<sup>尽请期待</sup></a></li> 
+            <li><a id="href-trust_and_manage" href="#trust_and_manage">中意的剪裁<sup>尽请期待</sup></a></li> 
+          </ul> 
+        </nav> 
+ 
+        <div id="slider-container"> 
+          <div id="slider-handle" style="left: 286px"></div> 
+          <div id="slider-code"></div> 
+          <article id="forget_servers" style="display:none;"> 
+            <h3> 
+              在一处集中查看您在所有网络的各色活动。
+            </h3> 
+            <p> 
+              你发布原创微博了？在豆瓣收藏新书了？在人人发表了新日志？在Evernote添加了新笔记？ 
+            </p> 
+            <p> 
+              在一处集中查看你的所有这些活动，按时间流水排列，还可按动作分类查看，不再为自己的形迹分散而烦恼。 
+            </p> 
+<!--             <p>
+              不，我们不会把这些网站上其它人的最新动态推送给你，我们为您关注的，只是您自己的活动。专注。  
+            </p> -->
+<!--             <ul> 
+              <li><a href="http://www.heroku.com/how/deploy" class="button">Agile Deployment on Heroku</a></li> 
+            </ul>  -->
+            <div class="present_box"> 
+            </div> 
+          </article> 
+        
+          <article id="run_anything">  
+            <h3> 
+               在一处集中查看他人给你的反馈
+            </h3> 
+            <p> 
+     是不是很多人转播一条你并不关心的微博？是不是这样的事件淹没了你真正会感兴趣的@你？ 是否有人的回应让你拍案叫绝，混在其它的@你中难在找寻？你是否想收集那些最好的互动回忆？
+            </p>
+            <p>      
+     在一处集中查看他人给你的反馈，你和他人的互动，更好地管理，关注、忽略、分类、收藏。
+            </p>  
+<!--             <ul> 
+              <li><a href="http://www.heroku.com/how/scale" class="button">Scaling Apps on Heroku</a></li> 
+            </ul>  -->
+            <div class="present_box"> 
+            </div> 
+          </article> 
+ 
+          <article id="see_everything" style="display:none;"> 
+            <h3> 
+              随心自定义的整合功能
+            </h3> 
+            <p> 
+              几条微博连续说的是一件事情？若干活动围绕的是一个主题？满足某些条件的活动需要作为一个组来查看？
+            </p> 
+            <p> 
+              随心自定义的整合功能。你可以像胶水一样粘结你的活动，也可以增加一个过滤器而成为一个分组，打上一个标签，附着一个提醒的图标。
+            </p> 
+<!--             <ul> 
+              <li><a href="http://www.heroku.com/how/observe" class="button">Visibility and Logging on Heroku</a></li> 
+            </ul>  -->
+            <div class="present_box"> 
+            </div> 
+          </article> 
+ 
+          <article id="trust_and_manage" style="display:none;"> 
+            <h3> 
+              剪裁您最喜欢的微博秀和杂志
+            </h3> 
+            <p>
+              签名秀太简单？微博秀很多杂乱信息？想要把自己整合的结果导出或者发布？。            
+            </p> 
+            <p>
+              定制您自己的微博秀、您自己的杂志。 可以做成图片，可以另存为网页mht，可以打印为pdf，还可以导出为各种结构式的格式，xml、json、yaml。
+            </p> 
+<!--             <ul> 
+              <li><a href="http://www.heroku.com/how/relax" class="button">Erosion-resistance on Heroku</a></li> 
+              <li><a href="http://www.heroku.com/how/command" class="button">Control Surface APIs</a></li> 
+            </ul>  -->
+            <div class="present_box"> 
+            </div> 
+          </article> 
+        </div> 
+      </div> 
+    </section> 
+    
+<script src="http://www.heroku.com/javascripts/modernizr-2.0.min.js"></script>
+<script src='http://www.heroku.com/javascripts/jquery-1.6.1.min.js' type='text/javascript'></script>
+<script src='http://www.heroku.com/javascripts/home.js' type='text/javascript'></script> 
+<!--[if lt IE 9]>
+<script src="http://www.heroku.com/javascripts/selectivizr-1.0.2.min.js"></script>
+<![endif]--> 
+     

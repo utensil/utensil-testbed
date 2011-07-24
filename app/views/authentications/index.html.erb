@@ -1,15 +1,4 @@
-<% title t("authentications.sign_in") %> 
-
-<div id="user_nav">  
-  <% if user_signed_in? %>  
-    <%= t "authentications.sign_in_prompt", :login_name => current_user.email%>
-    <%= link_to t("authentications.sign_out"), destroy_user_session_path, :method => :delete %>  
-  <% else %>  
-    <%= link_to t("authentications.sign_up"), new_user_registration_path %>
-    <%= t("or") %>
-    <%= link_to t("authentications.sign_in"), new_user_session_path %>  
-  <% end %>  
-</div>  
+<% title t("authentications.sign_in") %>
 
 <% if @authentications %>  
  <% unless @authentications.empty? %>  
@@ -28,14 +17,7 @@
      <% end %>  
      <div class="clear"></div>  
     </div>  
-   <% end %>  
-   <p><strong><%= t("authentications.add_sign_in_method") %></strong></p>  
-  <% else %>  
-  <p><strong><%= t("authentications.sign_in_methods_for_not_login")%></strong></p>  
+   <% end %>   
 <% end %>
-  
-<% for auth_method in $omni_auth_providers -%>
-  <%= link_to image_tag("/images/#{auth_method.to_s}_32.png", :size => "32x32", :title => (t auth_method.to_s, :scope => :auth_provider)), "/auth/#{auth_method.to_s}", 
-        :class => "auth_provider"%>  
-<% end -%>
+<%= render :partial => "layouts/auth_nav" %>
 <div class="clear"></div> 

@@ -34,6 +34,8 @@ en:
       'Add another service to sign in with:'
     sign_in_methods_for_not_login:
       'Sign in through one of these services:'
+    more_actions:
+      'You may also' 
     forget_password:
       'Forgot your password?'
     confirmation_not_received:

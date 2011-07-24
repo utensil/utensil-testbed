@@ -36,7 +36,9 @@ zh-CN:
     add_sign_in_method:
       '您还可以启用更多的登录方式：'
     sign_in_methods_for_not_login:
-      '您还可以直接通过您在下列网站的帐户登录：' 
+      '您还可以直接通过您在下列网站的帐户登录：'
+    more_actions:
+      '您还可以：' 
     forget_password:
       '忘记密码?'
     confirmation_not_received:
