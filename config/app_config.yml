@@ -1,8 +1,12 @@
 development:
   omni_auth_providers: [:tqq, :douban, :tsina, :github, :renren, :yahoo, :t163, :tsohu, :linked_in] #, :evernote]
+  omni_auth_uid_fallback: 
+    :tqq : 'username'
 
 test:
   omni_auth_providers: [:tqq, :douban, :tsina, :github, :renren, :yahoo, :t163, :tsohu, :linked_in] #, :evernote]
 
 production:
   omni_auth_providers: [:tqq, :douban, :tsina, :github, :renren, :yahoo, :t163, :tsohu, :linked_in] #, :evernote]
+  omni_auth_uid_fallback: 
+    :tqq : 'username'

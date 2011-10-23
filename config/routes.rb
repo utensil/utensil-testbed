@@ -10,9 +10,7 @@ UtensilTestbed::Application.routes.draw do
   
   root :to => "home#index"
   
-  devise_for :users, :sign_out_via => [ :post, :delete ] 
-  
-  #, :controllers => { :registrations => 'users/registrations' } 
+  devise_for :users, :sign_out_via => [ :post, :delete ] , :controllers => { :registrations => 'users/registrations' } 
   
  # root :to => "session#new"
 

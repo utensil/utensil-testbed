@@ -1,3 +1,6 @@
+<% require 'json' %>
+<% env = JSON.parse(File.read(File.expand_path("../environment.json", "#{Rails.root.to_s}"))) %>
+
 # SQLite version 3.x
 #   gem install sqlite3
 development:
@@ -14,9 +17,21 @@ test:
   database: db/test.sqlite3
   pool: 5
   timeout: 5000
-
+  
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  encoding: utf8
+  database: testbed
   pool: 5
-  timeout: 5000
+<% if true %>
+  adapter: <%= env['mysql_ADAPTER'] %>
+  username: <%= env['mysql_USER'] %>
+  password:  <%= env['mysql_PASSWD'] %>
+  host:  <%= env['mysql_HOST'] %>
+  port:  <%= env['mysql_PORT'] %>
+<% else %>  
+  adapter: <%= env['pg_ADAPTER'] %>
+  username: <%= env['pg_USER'] %>
+  password:  <%= env['pg_PASSWD'] %>
+  host:  <%= env['pg_HOST'] %>
+  port:  <%= env['pg_PORT'] %>
+<% end %>

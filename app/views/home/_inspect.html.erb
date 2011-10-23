@@ -1,0 +1,29 @@
+<section>
+  <div>
+    <pre>
+      <%= session[:omniauth].ya2yaml unless session[:omniauth].nil? %>
+    </pre>
+  </div>
+<% current_authentications.each do |authentication| %>
+     欢迎您， <%= authentication.name 
+     %> 
+     <%= user_image_tag authentication.image_url.to_s %>!
+  <div>
+    您的描述是：
+    <pre><%= authentication.desc %></pre>
+    <% auth = authentication.original_auth -%>
+    您的原始用户信息串为：
+    <% user_hash = YAML.load(auth)['extra']['user_hash'] -%>
+    <pre>
+      <%= user_hash.ya2yaml %>
+    </pre>
+    您的原始授权信息串为：
+    <pre><%= auth.ya2yaml%></pre>
+          您的json为：
+    <pre>
+      <%= MultiJson.decode(authentication.access_token.get("http://open.t.qq.com/api/statuses/broadcast_timeline?format=json&pageflag=0&reqnum=20&pagetime=0").body).ya2yaml unless authentication.access_token.nil? 
+      %>
+    </pre>
+  </div>
+<% end %>
+</section> 

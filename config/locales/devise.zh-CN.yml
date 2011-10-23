@@ -18,6 +18,8 @@ zh-CN:
       timeout: '您的会话已经过期，请重新登录。'
       inactive: '您的帐户还没有激活。'
     sessions:
+      sign_in: '您已成功登录。'
+      sign_out: '您已成功退出。'
       signed_in: '您已成功登录。'
       signed_out: '您已成功退出。'
     passwords:

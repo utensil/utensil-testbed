@@ -1,19 +1,22 @@
 require 'yaml'
 require 'ya2yaml'
 
-config_file = "#{RAILS_ROOT}/config/app_config.yml"
+#FIXME
+YAML::ENGINE.yamler= 'syck'
 
-APP_YAML = YAML.load_file(config_file)
-APP_CONFIG = APP_YAML[RAILS_ENV].symbolize_keys
+config_file = "#{Rails.root.to_s}/config/app_config.yml"
 
-sec_config_file = "#{RAILS_ROOT}/config/secret_config.yml"
+APP_YAML = YAML.load(ERB.new(IO.read(config_file)).result)
+APP_CONFIG = APP_YAML[Rails.env.to_s].symbolize_keys
 
-if RAILS_ENV == 'production'
-  SECRET_CONFIG = ENV
-else
-  SECRET_YAML = YAML.load_file(sec_config_file)
-  SECRET_CONFIG = SECRET_YAML[RAILS_ENV]
-end
+sec_config_file = "#{Rails.root.to_s}/config/secret_config.yml"
+
+# if RAILS_ENV == 'production'
+#  SECRET_CONFIG = ENV
+# else
+  SECRET_YAML = YAML.load(ERB.new(IO.read(sec_config_file)).result)
+  SECRET_CONFIG = SECRET_YAML[Rails.env.to_s]
+# end
 
 $omni_auth_providers = APP_CONFIG[:omni_auth_providers] || {}
 

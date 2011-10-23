@@ -1,30 +1,5 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.9'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'rake', '0.8.7', :group => :production
-#gem 'evernote', :group => :production
-
-gem 'pg'
-
-group :development do
-  gem 'sqlite3'
-  gem "nifty-generators"
-end
-
-#gem 'formtastic'
-gem "simple_form"
-
-gem 'devise'  
-gem 'omniauth'  
-
-gem 'carrierwave'
-gem 'ya2yaml'
-
-gem 'jquery-rails'
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -47,10 +22,44 @@ gem 'jquery-rails'
 # group :development, :test do
 #   gem 'webrat'
 # end
-gem "mocha", :group => :test
-gem "rspec", :group => :test
-gem "rspec-rails", :group => [:test, :development]
+
+gem 'rails', '3.0.9'
+
+#gem 'formtastic'
+gem "simple_form"
+
+gem 'devise'  
+gem 'omniauth'  
+
+gem 'carrierwave'
+gem 'json'
+gem 'multi_json'
+gem 'ya2yaml'
+
+gem 'jquery-rails'
+
+gem 'rake'
+# was for heroku 
+#gem 'rake', '0.8.7', :group => :production
+#gem 'evernote', :group => :production
+
+group :production do
+  # was for heroku 
+  gem 'pg'
+  # for dotcloud
+  # https://github.com/brianmario/mysql2
+  gem "mysql2", "~> 0.2.7"
+end
+
+group :development do
+  gem 'sqlite3'
+  gem "nifty-generators"
+end
+
 group :test do
+  gem "rspec"
+  gem "rspec-rails"
+  gem "mocha"
   gem "factory_girl_rails"
   #gem "capybara"
   gem "guard-rspec"

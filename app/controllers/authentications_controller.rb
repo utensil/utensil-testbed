@@ -5,22 +5,29 @@ class AuthenticationsController < ApplicationController
   end
 
   def create  
-    omniauth = request.env["omniauth.auth"]  
-    authentication = Authentication.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'].to_s)  
-    if authentication  
+    omniauth = Authentication.reprocess_omniauth!(request.env["omniauth.auth"])
+    #logger.debug "omniauth.auth.user_hash = #{omniauth.ya2yaml}"  
+    authentication = Authentication.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'].to_s)
+      
+    if authentication
+      logger.debug "Authentication[#{omniauth['provider']}][#{omniauth['uid']}] found, login for user[#{authentication.uid}]."  
       flash[:notice] = t("devise.omniauth_callbacks.success", :kind => t("auth_provider.#{omniauth['provider']}"))
       sign_in_and_redirect(:user, authentication.user)  
-    elsif current_user  
+    elsif current_user
+      logger.debug "Using [#{omniauth['provider']}][#{omniauth['uid']}] as user[#{current_user.id}]'s login method."  
       current_user.authentications.create(:provider => omniauth['provider'], :uid => omniauth['uid'].to_s)  
       flash[:notice] = t("devise.omniauth_callbacks.enable_success", :kind => t("auth_provider.#{omniauth['provider']}"))  
       redirect_to authentications_url  
-    else  
+    else
       user = User.new  
-      user.apply_omniauth(omniauth)  
-      if user.save  
+      user.apply_omniauth(omniauth)      
+      logger.debug "Creating user from [#{omniauth['provider']}][#{omniauth['uid']}] => #{user.ya2yaml}."
+      if user.save
+        logger.debug "Email available for [#{omniauth['provider']}][#{omniauth['uid']}]."  
         flash[:notice] = t("devise.sessions.sign_in")  
         sign_in_and_redirect(:user, user)  
-      else  
+      else
+        logger.debug "Request further fillin for [#{omniauth['provider']}][#{omniauth['uid']}]."    
         session[:omniauth] = omniauth.except('extra')  #TODO
         redirect_to new_user_registration_url  
       end
